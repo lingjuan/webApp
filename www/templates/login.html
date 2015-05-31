@@ -1,0 +1,36 @@
+<ion-view class='login'>
+	<ion-header-bar align-title="center" class="info-header">
+        <div class="buttons">
+            <a class="button icon-left ion-chevron-left button-clear button-dark button-self" onclick="javascript:history.back();"><span>返回</span></a>
+
+        </div>
+        <h1 class="title">会员登录</h1>
+    </ion-header-bar>
+    <ion-content class='row loginCtn'>
+        <div class="col col-70 loginBox">
+        	<a class="logo"></a>
+        	 <form name="loginForm" ng-submit="login(userData)" novalidate> 
+        		<!-- <div class="alert-danger displayHide"> 
+                    请输入账号和密码
+                </div> -->
+                 <label class="item item-input" >
+                     <i class="icon ion-ios7-person-outline placeholder-icon"></i>
+                     <input type="text" name='username' ng-model='userData.username' placeholder="账户" ng-minlength='3' ng-maxlength='8' ng-pattern="/^[a-zA-Z]\w{2,7}$/" ensure-unique="username" required ng-focus/>
+                 </label>
+                 <div class="error">
+                     <span ng-show="loginForm.username.$error.required && loginForm.username.$dirty && loginForm.submitted">用户名不能为空.</span>
+                     <span ng-show="loginForm.username.$dirty && loginForm.username.$error.defined">账号不正确</span>
+                     <span ng-show="loginForm.username.$dirty && loginForm.username.$valid && loginForm.username.$focused">验证通过</span>
+                </div>
+                 <label class="item item-input">
+                     <i class="icon ion-key placeholder-icon"></i>
+                     <input type="password" name="password" ng-model='userData.password' placeholder="密码" required>
+                </label>
+				<div class="buttons">
+					<button ng-disabled='login.$invalid'>登录</button>
+					<a href="#/protocol">注册</a>
+				</div>
+             </form>        	
+        </div>
+    </ion-content>
+</ion-view>

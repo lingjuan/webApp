@@ -1,0 +1,48 @@
+<ion-view class='register'>
+	<ion-header-bar align-title="center" class="info-header">
+        <div class="buttons">
+            <a class="button icon-left ion-chevron-left button-clear button-dark button-self" onclick="javascript:history.back();"><span>返回</span></a>
+
+        </div>
+        <h1 class="title">修改信息</h1>
+    </ion-header-bar>
+    <ion-content class='registerCtn'>
+        <h4>修改用户信息</h4>
+        <div class="col col-80 col-offset-10 registerBox">
+        	<div class="item item-input">
+        		<span class='input-label'>用户名:</span>
+        		<input type="text" required ng-model='userData.account'>
+        	</div>
+        	<div class="item item-input">
+        		<span class='input-label'>真实姓名:</span>
+        		<input type="text"ng-model='userData.realName'>
+        	</div>
+        	<div class="item sex">
+        		<span class='input-label'>性别:</span>
+        		<div class="sexInput">
+	        		<input type="radio" name="sex" value='0' checked="{{sex}}==0" ng-model='userData.sex'>男
+	        		<input type="radio" name="sex" value='1' checked="{{sex}}==1" ng-model='userData.sex'>女
+        		</div>
+        	</div>
+        	<div class="item item-input">
+        		<span class='input-label'>出生年月:</span>
+        		<input type="text" ng-model='userData.birthday' id='picker_1' date-picker='' onchange="" >
+        	</div>
+        	<div class="item item-input">
+        		<span class='input-label'>手机号码:</span>
+        		<input type="text" ng-model='userData.phoneNumber'>
+        	</div>
+        	<div class="item item-input">
+        		<span class='input-label'>电子邮箱:</span>
+        		<input type="email" ng-model='userData.email'>
+        	</div>
+        	<div class="item item-input">
+        		<span class='input-label'>QQ号码:</span>
+        		<input type="text" ng-model='userData.qqNumber'>
+        	</div>
+            <br>
+            <br>
+        	<button class="col col-80 col-offset-10" ng-click='change(userData)'>修改</button>
+        </div>
+    </ion-content>
+</ion-view>

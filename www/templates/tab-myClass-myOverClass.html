@@ -1,0 +1,12 @@
+<ion-view>
+  <ion-content class="myClassCtn">
+    <div class="coursesList">
+        <div ng-repeat='course in over'>
+          <a href="#/video"><img ng-src="{{'http://23981515.com:80'+course.img}}"></a>
+          <span>{{course.name}}</span>
+          <a class="again" ng-click='cancel()'>再次购买</a>
+          <a href="#" class="remove">移除</a>
+        </div>
+    </div>
+  </ion-content>
+  </ion-view>

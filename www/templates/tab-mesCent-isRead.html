@@ -1,0 +1,11 @@
+<ion-view>
+	<ion-content class="infoDetail">
+      <div class="list info-list">
+           <a class="item mes" ng-repeat='message in messages' href='#/tab/mesCtn1/{{message.id}}' ng-click = 'findIndex($index)' on-hold='delete(message.id,$index)'>
+             <span class="message">{{message.who}}</span>
+             <p>{{message.time}}</p>
+             <p class='mesCtn'>{{message.message}}</p>
+           </a>
+      </div>
+	</ion-content>
+</ion-view>
